@@ -39,7 +39,8 @@ class StripeController extends CI_Controller
 
         \Stripe\Stripe::setApiKey($this->config->item('stripe_secret'));
 
-        $message = null;
+        $message = 'Payment successfully';
+
         $success = false;
         $charge = null;
         $err = null;

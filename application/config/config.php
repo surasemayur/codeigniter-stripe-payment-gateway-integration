@@ -30,8 +30,8 @@ $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAM
 $config['base_url'] = $root;
 
 /*Stripe Config*/
-$config['stripe_key'] = 'YOUR_PUBLISHABLE_KEY';
-$config['stripe_secret'] = 'YOUR_SECRET_KEY';
+$config['stripe_key'] = 'pk_test_51Iw0nMSHIIloh4KXtTgI8tT38o481iPmEAXeGEM4PlFRtkn1WNAhv5GQQVdEsprmjbUCwuydi27QwZHrNalvMRuh00rn6dPsh8';
+$config['stripe_secret'] = 'sk_test_51Iw0nMSHIIloh4KXlBtKWWfAGZ7zDLeKWQcm52UhYHWxTjE7lcM3XtA0tfACCNaxr9pLLIVy49jLYYR5Y2nuL9h700oL4Xi7mT';
 
 /*
 |--------------------------------------------------------------------------

@@ -76,9 +76,9 @@ $query_builder = true;
 
 $db['default'] = [
     'dsn'      => '',
-    'hostname' => 'db4free.net', //db4free.net
-    'username' => 'ci_stripe', //ci_stripe
-    'password' => '123456789', //123456789
+    'hostname' => 'localhost', //db4free.net
+    'username' => 'root', //ci_stripe
+    'password' => '', //123456789
     // 'database' => APPPATH . '/database/stripe.db',
     'database'     => 'ci_stripe',
     'dbdriver'     => 'mysqli',

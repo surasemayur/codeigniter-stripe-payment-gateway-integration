@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-info fixed-top">
         <div class="container">
-            <a class="navbar-brand" href=".">Stripe Payment Gateway Integration In Codeigniter <?php echo CI_VERSION; ?> (Ajax Request)</a>
+            <a class="navbar-brand" href=".">Stripe Payment Gateway Integration In Codeigniter <?php //echo CI_VERSION; ?> (Ajax Request)</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +39,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="https://stripe.com/docs" target="_blank">Stripe Docs</a>
-        		    <a class="dropdown-item" href="https://stripe.com/docs/payments/checkout" target="_blank">Stripe Checkout</a>
+                    <a class="dropdown-item" href="https://stripe.com/docs/payments/checkout" target="_blank">Stripe Checkout</a>
                     <a class="dropdown-item" href="https://stripe.com/docs/error-codes" target="_blank">Stripe Error Codes</a>
                     </div>
                     </li>
@@ -48,11 +48,12 @@
         </div>
     </nav>
 
+
     <div class="container-fluid">
 
-		<div class="container py-3">
-			<div class="row">
-				<div class="col-12 col-sm-8 col-md-6 mx-auto">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 mx-auto">
                     <noscript>
                         <div class="bs-callout bs-callout-danger">
                             <h4>JavaScript is not enabled!</h4>
@@ -65,81 +66,81 @@
                     </div>
                     <div class="alert alert-success alert-dismissible display-hide">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span id="successMsg"></span>
+                        <span id="successMsg">22</span>
                     </div>
 
-					<div id="pay-invoice" class="card">
-						<div class="card-body">
-							<div class="card-title">
-								<h2 class="text-center">Pay Invoice</h2>
-							</div>
-							<hr>
-							<form action="" class="needs-validation" method="post" novalidate="novalidate" data-stripe-publishable-key="<?php echo $this->config->item('stripe_key') ?>">
-								<div class="form-group text-center">
-									<ul class="list-inline">
-										<li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
-										<li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
-										<li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
-										<li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
-									</ul>
-								</div>
-								<div class="form-group">
-									<label>Payment amount</label>
-									<h2>$100.00</h2>
+                    <div id="pay-invoice" class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2 class="text-center">Pay Invoice</h2>
+                            </div>
+                            <hr>
+                            <form action="" class="needs-validation" method="post" novalidate="novalidate" data-stripe-publishable-key="<?php echo $this->config->item('stripe_key') ?>">
+                                <div class="form-group text-center">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment amount</label>
+                                    <h2>$100.00</h2>
                                     <input type="hidden" name="amount" value="100">
-								</div>
-								<div class="form-row">
-									<div class="col-md-12">
-										<label for="cc-name" class="control-label">Name on card</label>
-										<input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" required>
-										<div class="invalid-feedback">Please enter the name on card</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-md-12">
-										<label for="cc-number" class="control-label">Card number</label>
-										<input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa number" maxlength="19" value="4242424242424242" required>
-										<div class="invalid-feedback">Please enter the card number</div>
-									</div>
-								</div>
-								<div class="form-row">
-									<div class="col-4">
-										<label for="cc-month" class="control-label">Month</label>
-										<input id="cc-month" name="cc-month" type="tel" class="form-control cc-month number" value="12" placeholder="MM" maxlength="2" required>
-										<div class="invalid-feedback">Please enter the exp. month</div>
-									</div>
-									<div class="col-4">
-										<label for="cc-year" class="control-label">Year</label>
-										<input id="cc-year" name="cc-year" type="tel" class="form-control cc-year number" value="2020" placeholder="YYYY" maxlength="4" required>
-										<div class="invalid-feedback">Please enter the exp. year</div>
-									</div>
-									<div class="col-4">
-										<label for="x_card_code" class="control-label">CVV/CVV2</label>
-										<div class="input-group">
-											<input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc number" value="123" maxlength="4" required>
-											<div class="input-group-append">
-												<span class="input-group-text"><span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"
-												data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
-												data-trigger="hover"></span></span>
-											</div>
-											<div class="invalid-feedback">Please enter the security code</div>
-										</div>
-									</div>
-								</div>
-								<br>
-								<div >
-									<button id="payment-button" type="submit" class="btn btn-lg btn-success btn-block">
-										<i class="fa fa-lock fa-lg"></i>&nbsp;
-										<span id="payment-button-amount">Pay $100.00</span>
-										<span id="payment-button-sending" style="display:none;">Sending…</span>
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <label for="cc-name" class="control-label">Name on card</label>
+                                        <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" required>
+                                        <div class="invalid-feedback">Please enter the name on card</div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-12">
+                                        <label for="cc-number" class="control-label">Card number</label>
+                                        <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa number" maxlength="19" value="4242424242424242" required>
+                                        <div class="invalid-feedback">Please enter the card number</div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-4">
+                                        <label for="cc-month" class="control-label">Month</label>
+                                        <input id="cc-month" name="cc-month" type="tel" class="form-control cc-month number" value="12" placeholder="MM" maxlength="2" required>
+                                        <div class="invalid-feedback">Please enter the exp. month</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="cc-year" class="control-label">Year</label>
+                                        <input id="cc-year" name="cc-year" type="tel" class="form-control cc-year number" value="2022" placeholder="YYYY" maxlength="4" required>
+                                        <div class="invalid-feedback">Please enter the exp. year</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="x_card_code" class="control-label">CVV/CVV2</label>
+                                        <div class="input-group">
+                                            <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc number" value="123" maxlength="4" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><span class="fa fa-question-circle fa-lg" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"
+                                                data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
+                                                data-trigger="hover"></span></span>
+                                            </div>
+                                            <div class="invalid-feedback">Please enter the security code</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div >
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-success btn-block">
+                                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                        <span id="payment-button-amount">Pay $100.00</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- build:js -->
@@ -150,19 +151,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-	<script>
+    <script>
 
-		(function() {
-			'use strict';
+        (function() {
+            'use strict';
 
-			$('[data-toggle="popover"]').popover()
+            $('[data-toggle="popover"]').popover()
 
-			window.addEventListener('load', function() {
-				// Fetch all the forms we want to apply custom Bootstrap validation styles to
-				var forms = document.getElementsByClassName('needs-validation');
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
 
-				// Loop over them and prevent submission
-				var validation = Array.prototype.filter.call(forms, function(form) {
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
                     form.addEventListener('submit', function(event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
@@ -195,12 +196,12 @@
                         }
                         form.classList.add('was-validated');
                     }, false);
-				});
+                });
 
-			}, false);
-		})();
+            }, false);
+        })();
 
-	</script>
+    </script>
 
     <script>
         window.appFilePath = '<?php echo base_url(); ?>';
@@ -268,6 +269,6 @@
         });
 
     </script>
-  	</body>
+    </body>
 
 </html>
