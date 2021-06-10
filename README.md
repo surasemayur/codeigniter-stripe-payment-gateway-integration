@@ -4,10 +4,7 @@ Simple Stripe Payment Gateway Integration In Codeigniter
 ![Payment Page](/screenshot/payment_page.png?raw=true)
 
 
-### Demo
-```
-url: https://codeigniter-stripe.herokuapp.com/
-```
+
 
 ### Framework Used
 - Codeigniter 3.1.10
